@@ -1,24 +1,30 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import SectionHeader from "../Common/SectionHeader";
 
 const Pricing = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
   return (
     <>
-      {/* <!-- ===== Pricing Table Start ===== --> */}
-      <section className="overflow-hidden pb-20 pt-15 lg:pb-25 xl:pb-30">
+      {/* ===== About Us Section Start ===== */}
+      <section className="overflow-hidden pb-20 pt-15 lg:pb-25 xl:pb-30 bg-gradient-to-r from-blue-700 to-green-400">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          {/* <!-- Section Title Start --> */}
+          {/* Section Title Start */}
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
-                title: `PRICING PLANS`,
-                subtitle: `Simple Pricing`,
-                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+                title: `ABOUT US`,
+                subtitle: `G3 Cyber Space`,
               }}
             />
           </div>
-          {/* <!-- Section Title End --> */}
+          {/* Section Title End */}
         </div>
 
         <div className="relative mx-auto mt-15 max-w-[1207px] px-4 md:px-8 xl:mt-20 xl:px-0">
@@ -31,166 +37,138 @@ const Pricing = () => {
             />
           </div>
           <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-12.5">
-            {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                $10{" "}
-                <span className="text-regular text-waterloo dark:text-manatee">
-                  /month
-                </span>
-              </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Small Pack
-              </h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    300 GB Storage
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited Photos and Videos
-                  </li>
-                  <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-                    Exclusive Support
-                  </li>
-                  <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-                    Custom Branding Strategy
-                  </li>
-                </ul>
+            {/* About Us Item */}
+            <div
+              onClick={() => handleFlip(0)}
+              className={`${
+                flippedIndex === 0 ? "flipped scale-105" : ""
+              } cursor-pointer transition-transform animate_spin group relative rounded-lg border border-stroke bg-white shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none card`}
+            >
+              <div className="card-inner">
+                <div className="card-front">
+                  <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+                    Who are we?
+                  </h3>
+                </div>
+                <div className="card-back">
+                  <p>
+                    Founded by industry veterans with over 40 years of combined
+                    expertise in cybersecurity, audits, BCM (Business Continuity
+                    Management), TPRM, and regulatory compliance, G3 Cyberspace
+                    stands at the forefront of delivering trusted solutions.
+                  </p>
+                </div>
               </div>
-
-              <button
-                aria-label="Get the Plan button"
-                className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
-              >
-                <span className="duration-300 group-hover/btn:pr-2">
-                  Get the Plan
-                </span>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
             </div>
 
-            {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <div className="absolute -right-3.5 top-7.5 -rotate-90 rounded-bl-full rounded-tl-full bg-primary px-4.5 py-1.5 text-metatitle font-medium uppercase text-white">
-                popular
+            {/* Our Vision Item */}
+            <div
+              onClick={() => handleFlip(1)}
+              className={`${
+                flippedIndex === 1 ? "flipped scale-105" : ""
+              } cursor-pointer transition-transform animate_spin group relative rounded-lg border border-stroke bg-white shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none card`}
+            >
+              <div className="card-inner">
+                <div className="card-front">
+                  <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+                    Our Vision
+                  </h3>
+                </div>
+                <div className="card-back">
+                  <p>
+                    At G3 Cyberspace, we envision transforming Governance, Risk,
+                    and Compliance (GRC) into a strategic advantage for businesses
+                    worldwide. Our mission is to elevate GRC beyond regulatory
+                    obligations, fostering trust, innovation, and sustainable growth
+                    for our clients.
+                  </p>
+                </div>
               </div>
-
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                $59{" "}
-                <span className="text-regular text-waterloo dark:text-manatee">
-                  /month
-                </span>
-              </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Medium Pack
-              </h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    300 GB Storage
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited Photos and Videos
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive Support
-                  </li>
-                  <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-                    Custom Branding Strategy
-                  </li>
-                </ul>
-              </div>
-
-              <button
-                aria-label="Get the Plan button"
-                className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
-              >
-                <span className="duration-300 group-hover/btn:pr-2">
-                  Get the Plan
-                </span>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
             </div>
 
-            {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                $189{" "}
-                <span className="text-regular text-waterloo dark:text-manatee">
-                  /month
-                </span>
-              </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Large Pack
-              </h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    300 GB Storage
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited Photos and Videos
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive Support
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Custom Branding Strategy
-                  </li>
-                </ul>
+            {/* Our Product Item */}
+            <div
+              onClick={() => handleFlip(2)}
+              className={`${
+                flippedIndex === 2 ? "flipped scale-105" : ""
+              } cursor-pointer transition-transform animate_spin group relative rounded-lg border border-stroke bg-white shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none card`}
+            >
+              <div className="card-inner">
+                <div className="card-front">
+                  <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+                    Our Product
+                  </h3>
+                </div>
+                <div className="card-back">
+                  <p>
+                    Discover the power of Soltrisk, our comprehensive Compliance
+                    suite product designed to govern global governance. We are
+                    dedicated to helping businesses thrive in today's complex
+                    compliance requirements.
+                  </p>
+                </div>
               </div>
-
-              <button
-                aria-label="Get the Plan button"
-                className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
-              >
-                <span className="duration-300 group-hover/btn:pr-2">
-                  Get the Plan
-                </span>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
       </section>
-      {/* <!-- ===== Pricing Table End ===== --> */}
+      {/* ===== About Us Section End ===== */}
+      <style jsx>{`
+        @keyframes spin {
+          0% {
+            transform: rotateY(0deg);
+          }
+          100% {
+            transform: rotateY(360deg);
+          }
+        }
+
+        .animate_spin {
+          animation: spin 1s ease-in-out;
+        }
+
+        .card {
+          perspective: 1000px;
+          width: 100%;
+          max-width: 400px; /* Increased width */
+          min-height: 300px; /* Increased height */
+        }
+        .card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+        }
+        .card.flipped .card-inner {
+          transform: rotateY(180deg);
+        }
+        .card-front,
+        .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 0.5rem;
+          padding: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-front {
+          background-color: white;
+        }
+        .card-back {
+          background-color: #f8f9fa;
+          transform: rotateY(180deg);
+        }
+        .card-inner > div {
+          display: flex;
+          flex-direction: column;
+        }
+      `}</style>
     </>
   );
 };

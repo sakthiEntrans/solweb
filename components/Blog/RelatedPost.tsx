@@ -25,10 +25,10 @@ const RelatedPost = async () => {
                 )}
               </div>
               <h5 className="text-md font-medium text-black transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
-                <Link href={`/blog/blog-details`}>
+                {/* <Link href={`/blog/blog-details`}> */}
                   {" "}
                   {post.title.slice(0, 40)}...
-                </Link>
+                {/* </Link> */}
               </h5>
             </div>
           ))}

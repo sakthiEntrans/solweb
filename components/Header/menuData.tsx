@@ -23,19 +23,31 @@ const menuData: Menu[] = [
         id: 34,
         title: "TPRM",
         newTab: false,
-        path: "/auth/signin",
+       
       },
       {
         id: 35,
         title: "Customer centric Compliance",
         newTab: false,
-        path: "/auth/signup",
+     
+      },
+      {
+        id: 35,
+        title: "Risk Management",
+        newTab: false,
+       
       },
       {
         id: 35,
         title: "Statutory and Regulatory compliance",
         newTab: false,
-        path: "/docs",
+       
+      },
+      {
+        id: 35,
+        title: "  Data Privacy Compliance",
+        newTab: false,
+        
       },
     ],
   },
@@ -43,13 +55,13 @@ const menuData: Menu[] = [
     id: 2.1,
     title: "Resources",
     newTab: false,
-    path: "/blog",
+   
     submenu: [
       {
         id: 31,
         title: "Blogs",
         newTab: false,
-        path: "/blog",
+       
       },
     ],
   },
@@ -57,25 +69,25 @@ const menuData: Menu[] = [
     id: 2.3,
     title: "Services",
     newTab: false,
-    path: "/docs",
+    
     submenu: [
       {
         id: 31,
         title: "vCISO",
         newTab: false,
-        path: "/blog",
+       
       },
       {
         id: 32,
         title: "vDPO",
         newTab: false,
-        path: "/blog",
+       
       },
       {
         id: 33,
         title: "Compliance",
         newTab: false,
-        path: "/blog",
+        
       },
     ],
   },
@@ -123,12 +135,12 @@ const menuData: Menu[] = [
   //   ],
   // },
 
-  {
-    id: 4,
-    title: "Support",
-    newTab: false,
-    path: "/support",
-  },
+  // {
+  //   id: 4,
+  //   title: "Support",
+  //   newTab: false,
+  //   path: "/support",
+  // },
 ];
 
 export default menuData;

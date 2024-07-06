@@ -1,8 +1,24 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
+  useEffect(() => {
+    if (isPopupVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isPopupVisible]);
+
   return (
     <>
       <footer className="border-t border-stroke bg-blacksection dark:border-blacksection dark:bg-blacksection">
@@ -16,7 +32,6 @@ const Footer = () => {
                     opacity: 0,
                     y: -20,
                   },
-
                   visible: {
                     opacity: 1,
                     y: 0,
@@ -34,7 +49,7 @@ const Footer = () => {
                     height={80}
                     src="/images/logo/logo-light.svg"
                     alt="Logo"
-                    className="dark:hidden" 
+                    className="dark:hidden"
                   />
                   <Image
                     width={110}
@@ -46,17 +61,14 @@ const Footer = () => {
                 </a>
 
                 <p className="mb-10 mt-5">
-               <b> SoltRisk </b>- A SaaS-based platform that automates regulatory compliance management and monitoring
+                  <b>SoltRisk</b> - A SaaS-based platform that automates regulatory compliance management and monitoring
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
                   contact
                 </p>
-                <a
-                  href="#"
-                  className="text-itemtitle font-medium text-white"
-                >
-                 info@g3cyberspace.com
+                <a href="#" className="text-itemtitle font-medium text-white">
+                  info@g3cyberspace.com
                 </a>
               </motion.div>
 
@@ -67,7 +79,6 @@ const Footer = () => {
                       opacity: 0,
                       y: -20,
                     },
-
                     visible: {
                       opacity: 1,
                       y: 0,
@@ -85,34 +96,22 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                      <a href="#" className="mb-3 inline-block hover:text-primary">
                         Home
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Product
+                      <a href="" className="mb-3 inline-block hover:text-primary">
+                        Solutions
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                      <a href="" className="mb-3 inline-block hover:text-primary">
                         Careers
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                      <a href="" className="mb-3 inline-block hover:text-primary">
                         Pricing
                       </a>
                     </li>
@@ -125,7 +124,6 @@ const Footer = () => {
                       opacity: 0,
                       y: -20,
                     },
-
                     visible: {
                       opacity: 1,
                       y: 0,
@@ -143,37 +141,25 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                      <a href="" className="mb-3 inline-block hover:text-primary">
                         Company
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                    {/* <li>
+                      <a href="#" className="mb-3 inline-block hover:text-primary">
                         Press media
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                      <a href="" className="mb-3 inline-block hover:text-primary">
                         Our Blog
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
+                    {/* <li>
+                      <a href="" className="mb-3 inline-block hover:text-primary">
                         Contact Us
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </motion.div>
 
@@ -183,7 +169,6 @@ const Footer = () => {
                       opacity: 0,
                       y: -20,
                     },
-
                     visible: {
                       opacity: 1,
                       y: 0,
@@ -196,11 +181,9 @@ const Footer = () => {
                   className="animate_top"
                 >
                   <h4 className="mb-9 text-itemtitle2 font-medium text-white">
-                    Newsletter
+                  Contact Us
                   </h4>
-                  <p className="mb-4 w-[90%]">
-                    Subscribe to receive future updates
-                  </p>
+                  <p className="mb-4 w-[90%]">Get Touch with us for more Updates!</p>
 
                   <form action="#">
                     <div className="relative">
@@ -209,11 +192,8 @@ const Footer = () => {
                         placeholder="Email address"
                         className="w-full rounded-full border border-strokedark px-6 py-3 shadow-solid-11 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
                       />
-
-                      <button
-                        aria-label="signup to newsletter"
-                        className="absolute right-0 p-4"
-                      >
+<Link href="/calendy">
+                      <button aria-label="signup to newsletter" className="absolute right-0 p-4">
                         <svg
                           className="fill-[#757693] hover:fill-primary dark:fill-white"
                           width="20"
@@ -234,7 +214,7 @@ const Footer = () => {
                             </clipPath>
                           </defs>
                         </svg>
-                      </button>
+                      </button></Link>
                     </div>
                   </form>
                 </motion.div>
@@ -251,7 +231,6 @@ const Footer = () => {
                   opacity: 0,
                   y: -20,
                 },
-
                 visible: {
                   opacity: 1,
                   y: 0,
@@ -264,14 +243,13 @@ const Footer = () => {
               className="animate_top"
             >
               <ul className="flex items-center gap-8">
-               
                 <li>
-                  <a href="#" className="hover:text-primary">
+                  <a href="#" className="hover:text-primary" onClick={togglePopup}>
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary">
+                  <a href=" " className="hover:text-primary">
                     Support
                   </a>
                 </li>
@@ -284,7 +262,6 @@ const Footer = () => {
                   opacity: 0,
                   y: -20,
                 },
-
                 visible: {
                   opacity: 1,
                   y: 0,
@@ -307,7 +284,6 @@ const Footer = () => {
                   opacity: 0,
                   y: -20,
                 },
-
                 visible: {
                   opacity: 1,
                   y: 0,
@@ -361,7 +337,7 @@ const Footer = () => {
                         />
                       </g>
                       <defs>
-                        <clipPath id="clip0_48_1502">
+                        <clipPath id="clip0_48_1502)">
                           <rect width="24" height="24" fill="white" />
                         </clipPath>
                       </defs>
@@ -418,6 +394,89 @@ const Footer = () => {
           {/* <!-- Footer Bottom --> */}
         </div>
       </footer>
+
+      {isPopupVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-md shadow-lg max-w-4xl mx-auto w-full max-h-screen overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">PRIVACY POLICY</h2>
+            <p className="mb-4">
+              This Privacy Policy explains how G3 Cyberspace Pvt Ltd and its affiliate product Soltrisk (hereinafter
+              referred to as “we”, “us”, “our”) may collect, use, store, disclose, discard, or otherwise process your
+              data including personal data provided when using our websites and describes the rights you have with
+              respect to your personal data. We are committed to providing the highest level of protection regarding the
+              processing of their vendors’/clients’/customers’/job applicants’/website visitors’ personal data based on
+              applicable data protection laws and regulations at respective locations. In general, you can visit our
+              website without providing personal data. However, there are times when we will request personal data.
+            </p>
+            <p className="mb-4">
+              <b>Personal Data</b><br />
+              In this Privacy Policy, “personal data” is any data which relates to an individual who may be identified
+              from that data, or from a combination of a set of data, and other information which is or may be in
+              possession of us, for instance information about your identity and contact details (such as name, email-
+              ID, contact number).
+            </p>
+            <p className="mb-4">
+              <b>Your rights in relation to personal data</b><br />
+              You have the following rights in relation to your personal data:
+              <ul className="list-disc list-inside">
+                <li>To access the personal data held by us about you.</li>
+                <li>To have your personal data corrected, for example, if it is incomplete or incorrect.</li>
+                <li>To opt out of receiving marketing communications at any time</li>
+                <li>To restrict or object to the processing of personal data or request erasing personal data (in
+                  certain circumstances and subject to applicable law)</li>
+                <li>To receive a copy of the personal data which you have provided to us (in certain circumstances
+                  and subject to applicable law)</li>
+              </ul>
+            </p>
+            <p className="mb-4">
+              <b>Purposes for which we process Personal Data</b><br />
+              We may process your personal data for legitimate purposes as follows, but not limited to:
+              <ul className="list-disc list-inside">
+                <li>Marketing / promoting and providing products and services.</li>
+                <li>Monitoring and improving our website and its content.</li>
+                <li>Conducting market research and surveys with the aim of improving / demonstrating our
+                  products and services.</li>
+                <li>Complying with applicable local or foreign law, regulation, policy, voluntary codes, directive.</li>
+                <li>Establishing, exercising, or defending legal rights in connection with legal proceedings (including
+                  any prospective legal proceedings) and seeking professional or legal advice in relation to such
+                  legal proceedings.</li>
+              </ul>
+              We process your personal data for the performance of the contracts, employment concluded with you,
+              compliance with applicable legal or regulatory obligations or for legitimate interests to provide you with
+              adequate and qualitative information about products and services and to prevent against any excessive
+              risk.
+            </p>
+            <p className="mb-4">
+              <b>Transfer of Personal Data</b><br />
+              We may transfer personal data, to any other body corporate or a person located in any other country.
+              We ensure that data protection is adhered to as per the global rules and regulations. The transfer may
+              be allowed only if it is necessary for the performance of the lawful contract between us or any person
+              on its behalf.
+            </p>
+            <p className="mb-4">
+              <b>Data Retention</b><br />
+              Personal Data is important to us and we have invested significantly in technology and processes to
+              protect the safeguarding and confidentiality of your personal data. If we engage external service
+              providers to act as processor, we ensure that they adhere to the same standards as us. Irrespective of
+              where your personal information is transferred or stored, we take all necessary steps to ensure that
+              personal data is kept secure.
+            </p>
+            <p className="mb-4">
+              <b>Changes to this Privacy Policy</b><br />
+              We may update this policy from time to time. The use of our Websites and any products and services
+              supplied are subject to our Terms and Conditions.
+            </p>
+            <p className="mb-4">
+              <b>Contact Details</b><br />
+              If you have any questions regarding this privacy policy or the protection of your personal data, you may
+              reach out to our company representative at info@g3cyberspace.com
+            </p>
+            <button onClick={togglePopup} className="mt-4 bg-primary text-white py-2 px-4 rounded">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

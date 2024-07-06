@@ -62,7 +62,7 @@ const Integration = () => {
                   width={50}
                   height={50}
                   src="./images/brand/brand-07.svg"
-                  alt="Brand"
+                  alt="Brand" 
                 />
               </div>
             </motion.div>
