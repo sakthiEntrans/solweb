@@ -108,12 +108,12 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-white"
                       >
                         {menuItem.title}
                         <span>
                           <svg
-                            className="h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-primary"
+                            className="h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-white"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
                           >
@@ -154,7 +154,7 @@ const Header = () => {
 
             <Link
               href=""
-              className="text-regular font-medium text-waterloo hover:text-primary"
+              className="text-regular font-medium text-waterloo hover:text-white"
             >
               Login
             </Link>
